@@ -12,19 +12,19 @@
         <nav class="navbar">
             <div class="logo">Shina's Portfolio</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" aria-label="Home">Home</a></li>
+                <li><a href="#projects" aria-label="Projects">Projects</a></li>
+                <li><a href="#about" aria-label="About">About</a></li>
+                <li><a href="#contact" aria-label="Contact">Contact</a></li>
             </ul>
         </nav>
      </header>
 
     <!-- Hero Section -->
-    <section id="home" class="Hero">
+    <section id="home" class="hero" aria-label="Hero Section">
             <h1>Hi, I'm Shina</h1>
             <p>I write code and build all kinds of stuff</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <a href="#projects" class="btn" aria-label="View My Work">View My Work</a>
     </section>
 
     <!-- Projects Section -->
@@ -35,19 +35,19 @@
                 <img src="assets/images/project1-thumbnail.jpg" alt="Project 1">
                 <h3>Project 1</h3>
                 <p>A short description of the project.</p>
-                <a href="#" class="btn">View Project</a>
+                <a href="javascript:void(0);" class="btn">View Project</a>
             </div>
             <div class="project-card">
                 <img src="assets/images/project2-thumbnail.jpg" alt="Project 2">
                 <h3>Project 2</h3>
                 <p>A short description of the project.</p>
-                <a href="#" class="btn">View Project</a>
+                <a href="javascript:void(0);" class="btn">View Project</a>
             </div>
             <div class="project-card">
                 <img src="assets/images/project3-thumbnail.jpg" alt="Project 3">
                 <h3>Project 3</h3>
                 <p>A short description of the project.</p>
-                <a href="#" class="btn">View Project</a>
+                <a href="javascript:void(0);" class="btn">View Project</a>
             </div>
             <!-- Repeat for additional projects -->
         </div>
@@ -57,7 +57,7 @@
     <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <img src="assets/images/profile.jpeg" alt="Shina's photo">
+            <img src="assets/images/profile.jpeg" alt="A photo of Shina, aspiring full-stack and AI developer.">
             <p>Hello! I'm Shina, an aspiring full-stack and AI developer. I love learning new technologies and creating useful solutions.</p>
         </div>
     </section>
@@ -65,7 +65,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
-        <form action="#" method="POST">
+        <form action="javascript:void(0);" method="POST" novalidate></form>
             <label for="name">Name</label>
             <input type="text" name="name" id="name" required>
 
