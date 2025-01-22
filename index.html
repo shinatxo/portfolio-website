@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shina's Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Header -->
@@ -24,7 +25,7 @@
     <section id="home" class="hero" aria-label="Hero Section">
             <h1>Hi, I'm Shina</h1>
             <p>I write code and build all kinds of stuff</p>
-            <a href="#projects" class="btn" aria-label="View My Work">View My Work</a>
+            <button class="btn" aria-label="View My Work" onclick="location.href='#projects';">View My Work</button>
     </section>
 
     <!-- Projects Section -->
@@ -57,7 +58,7 @@
     <section id="about" class="about">
         <h2>About Me</h2>
         <div class="about-content">
-            <img src="assets/images/profile.jpeg" alt="A photo of Shina, aspiring full-stack and AI developer.">
+            <img src="assets/images/profile.jpeg" alt="Shina, full-stack and AI developer">
             <p>Hello! I'm Shina, an aspiring full-stack and AI developer. I love learning new technologies and creating useful solutions.</p>
         </div>
     </section>
@@ -65,7 +66,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2>Contact Me</h2>
-        <form action="javascript:void(0);" method="POST" novalidate></form>
+        <form action="javascript:void(0);" method="POST" novalidate>
             <label for="name">Name</label>
             <input type="text" name="name" id="name" required>
 
@@ -80,16 +81,16 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <p>&copy; 2025 Shina's Portfolio. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/shinaoguntoye" target="_blank">
+        <div class="social-links"></div>
+            <a href="https://www.linkedin.com/in/shinaoguntoye" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"></a>
                 <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
             </a>
-            <a href="https://github.com/shinatxo" target="_blank">
+            <a href="https://github.com/shinatxo" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"></a>
                 <img src="assets/icons/github.svg" alt="GitHub" class="social-icon">
             </a>
-            <a href="https://www.instagram.com/shinatxo">
+            <a href="https://www.instagram.com/shinatxo" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile"></a>
                 <img src="assets/icons/instagram.svg" alt="Instagram" class="social-icon">
             </a>
         </div>
