@@ -33,3 +33,39 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Dynamic greeting message in hero section
+
+function updateGreeting() {
+    const hour = new Date().getHours();
+    const greetingElement = document.querySelector('.hero h1');
+    let greeting;
+
+    if (hour < 12) {
+        greeting = 'Good Morning, Welcome to my portfolio!';
+    } else if (hour < 18) {
+        greeting = 'Good Afternoon, Explore my journey!';
+    } else {
+        greeting = 'Good Evening, Dive into my work!';
+    }
+
+    greetingElement.innerText = greeting;
+}
+updateGreeting();
+
+// Form Submission handling
+
+const contactForm = document.querySelector('#contact-form');
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Prevent default form submission
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (name && email && message) {
+        alert (`Thank you for reaching out, ${name}! I'll get back to you shortly.`);
+        contactForm.reset();
+    } else {
+        alert ('Please fill out all the fields before submitting.');
+    }
+});
