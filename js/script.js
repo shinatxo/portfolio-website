@@ -11,8 +11,8 @@ function enableSmoothScrolling() {
             
             if (targetElement) {
                 targetElement.scrollIntoView({
-                    behaviour: 'smooth',
-                    block: 'start'
+                    behavior: 'smooth',
+                    block: 'center'
                 });
             }
         });
@@ -23,25 +23,22 @@ function enableSmoothScrolling() {
 // Highlight active navigation link based on scroll position
 
 function highlightActiveNav() {
-    window.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const threshold = window.innerHeight * 0.4;
     
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            const sectionTop = rect.top;
-            const sectionHeight = rect.height;
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionHeight = rect.height;
     
-            if (sectionTop < window.innerHeight / 2 && sectionTop > -sectionHeight / 2) {
-                const sectionId = section.getAttribute('id');
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').slice(1) === sectionId) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
+        if (sectionTop < threshold && sectionTop > -sectionHeight + threshold) {
+            const sectionId = section.getAttribute('id');
+            navLinks.forEach(link => {
+                const isActive = link.getAttribute('href').slice(1) === sectionId;
+                link.classList.toggle('active', isActive);
+            });
+        }
     });
 }
 
@@ -60,34 +57,52 @@ function updateGreeting() {
         greeting = 'Good Evening, Dive into my work!';
     }
 
-    greetingElement.innerText = greeting;
+    if (greetingElement) {
+        greetingElement.innerText = greeting;
+    } else {
+        console.error('Greeting element not found!');
+    }
 }
 
 // Form Submission handling
 
 function handleFormSubmission() {
-    const contactForm = document.querySelector('#contact-form');
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault(); // Prevent default form submission
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        if (name && email && message) {
-            alert (`Thank you for reaching out, ${name}! I'll get back to you shortly.`);
-            contactForm.reset();
-        } else {
-            alert ('Please fill out all the fields before submitting.');
-        }
-    });
+    const contactForm = document.querySelector('#contact form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent default form submission
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+    
+            if (name && email && message) {
+                alert (`Thank you for reaching out, ${name}! I'll get back to you shortly.`);
+                contactForm.reset();
+            } else {
+                alert ('Please fill out all the fields before submitting.');
+            }
+        });
+    } else {
+        console.error('Contact form not found!');
+    }
 }
 
 // Initialize features
 
 document.addEventListener('DOMContentLoaded', () => {
     enableSmoothScrolling();
-    highlightActiveNav();
     updateGreeting();
     handleFormSubmission();
-});
 
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                highlightActiveNav();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+});
