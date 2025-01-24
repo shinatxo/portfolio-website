@@ -2,6 +2,7 @@
 
 function enableSmoothScrolling() {
     const navLinks = document.querySelectorAll('.nav-links a');
+    const viewWorkButton = document.querySelector('#view-work-button');
 
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -16,7 +17,21 @@ function enableSmoothScrolling() {
                 });
             }
         });
-    });        
+    });
+    
+    if (viewWorkButton) {
+        viewWorkButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetElement = document.getElementById('projects');
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+        });
+    }
 }
     
 
@@ -50,11 +65,11 @@ function updateGreeting() {
     let greeting;
 
     if (hour < 12) {
-        greeting = 'Good Morning, Welcome to my portfolio!';
+        greeting = 'Good Morning!';
     } else if (hour < 18) {
-        greeting = 'Good Afternoon, Explore my journey!';
+        greeting = 'Good Afternoon!';
     } else {
-        greeting = 'Good Evening, Dive into my work!';
+        greeting = 'Good Evening!';
     }
 
     if (greetingElement) {
