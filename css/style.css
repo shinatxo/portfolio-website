@@ -24,12 +24,6 @@ body {
     align-items: center; /* Aligns nicely if you add an icon later */
 }
 
-/* Optional hover effect */
-.logo:hover {
-    cursor: pointer;
-    color: #3498db; /* Changes logo color on hover */
-    transition: color 0.3s ease;
-}
 
 /* Navbar */
 .navbar {
@@ -248,7 +242,7 @@ body {
 .about-text .closing {
     font-size: 1.15rem;
     font-weight: 575;
-    color: #d3d3d3
+    color: #d3d3d3;
     margin-top: 1.75rem;
     line-height: 1.7;
     font-style: italic;
