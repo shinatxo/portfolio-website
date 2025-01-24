@@ -173,28 +173,100 @@ body {
 /* About Section */
 .about {
     padding: 3rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #b3b3b3;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     text-align: center;
+    color: #ffffff
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 2rem;
 }
 
 .about img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 3px solid #4caf50;
+    width: 350px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #4caf50;
+    flex-shrink: 0;
 }
 
+.about-text {
+    flex: 1;
+}
+
+/* Intro Styling */
+.about-text .intro {
+    font-size: 1.5rem;
+    font-weight: 615;
+    color: #4caf50;
+    margin-bottom: 0.25rem;
+}
+
+.about-text .intro-description {
+    font-size: 1.35rem;
+    font-weight: 575;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+/* Highlight Styling */
+.about-text .highlight {
+    color: #d3d3d3;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+/* Skills Styling */
 .about ul {
     list-style-type: none;
-    margin-top: 1rem;
+    padding: 0;
+    margin-top: 1.25rem;
+    line-height: 1.7;
 }
 
 .about ul li {
     margin: 0.5rem 0;
-    color: #b3b3b3;
+    color: #4caf50;
+}
+
+.about ul li strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Closing Styling */
+.about-text .closing {
+    font-size: 1.15rem;
+    font-weight: 575;
+    color: #d3d3d3
+    margin-top: 1.75rem;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about img {
+        width: 250px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
 }
 
 /* Contact Section */
