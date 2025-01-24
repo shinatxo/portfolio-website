@@ -82,7 +82,6 @@ function handleFormSubmission() {
     });
 }
 
-
 // Initialize features
 
 document.addEventListener('DOMContentLoaded', () => {
