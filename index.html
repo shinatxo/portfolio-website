@@ -25,90 +25,102 @@
                 <li><a href="#contact" aria-label="Contact">Contact</a></li>
             </ul>
         </nav>
-     </header>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero" aria-label="Hero Section">
+    <!-- Floating Navigation -->
+    <nav class = "floating-nav">
+        <ul>
+            <li><a href="home" aria-label="Home"></a></li>
+            <li><a href="projects" aria-label="Projects">Projects</a></li>
+            <li><a href="about" aria-label="About">About</a></li>
+            <li><a href="contact" aria-label="Contact">Contact</a></li>
+        </ul>        
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-label="Hero Section">
             <h1>From Medicine to Code</h1>
             <p>Bridging the gap between healthcare and technology as a doctor and aspiring AI developer.</p>
             <br>
             <p id="dynamic-greeting" class="greeting"></p>
             <button class="btn" aria-label="View My Work" id="view-work-button">View My Work</button>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <!-- Rock Paper Scissors -->
-            <div class="project-card">
-                <img src="assets/images/rock-paper-scissors-thumbnail.webp" alt="Rock, Paper, Scissors Game">
-                <h3>Rock, Paper, Scissors</h3>
-                <p>A fun game built using JavaScript, allowing players to compete against the computer. It features simple logic and a clean UI.</p>
-                <div class="project-links">
-                    <a href="https://shinatxo.github.io/rock-paper-scissors/" target="_blank" class="btn" rel="noopener noreferrer">Live Demo</a>
-                    <a href="https://github.com/shinatxo/rock-paper-scissors" target="_blank" class="btn" rel="noopener noreferrer">GitHub</a>
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <!-- Rock Paper Scissors -->
+                <div class="project-card">
+                    <img src="assets/images/rock-paper-scissors-thumbnail.webp" alt="Rock, Paper, Scissors Game">
+                    <h3>Rock, Paper, Scissors</h3>
+                    <p>A fun game built using JavaScript, allowing players to compete against the computer. It features simple logic and a clean UI.</p>
+                    <div class="project-links">
+                        <a href="https://shinatxo.github.io/rock-paper-scissors/" target="_blank" class="btn" rel="noopener noreferrer">Live Demo</a>
+                        <a href="https://github.com/shinatxo/rock-paper-scissors" target="_blank" class="btn" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                </div>
+                <!-- Mixed Messages -->
+                <div class="project-card">
+                    <img src="assets/images/mixed-messages-thumbnail.webp" alt="Mixed Messages Generator">
+                    <h3>Mixed Messages</h3>
+                    <p>A simple random message generator created using JavaScript. It generates motivational messages each time it's refreshed.</p>
+                    <div class="project-links">
+                        <a href="https://shinatxo.github.io/Mixed-Messages/" target="_blank" class="btn" rel="noopener noreferrer">Live Demo</a>
+                        <a href="https://github.com/shinatxo/mixed-messages" target="_blank" class="btn" rel="noopener noreferrer">GitHub</a>
+                    </div>
                 </div>
             </div>
-            <!-- Mixed Messages -->
-            <div class="project-card">
-                <img src="assets/images/mixed-messages-thumbnail.webp" alt="Mixed Messages Generator">
-                <h3>Mixed Messages</h3>
-                <p>A simple random message generator created using JavaScript. It generates motivational messages each time it's refreshed.</p>
-                <div class="project-links">
-                    <a href="https://shinatxo.github.io/Mixed-Messages/" target="_blank" class="btn" rel="noopener noreferrer">Live Demo</a>
-                    <a href="https://github.com/shinatxo/mixed-messages" target="_blank" class="btn" rel="noopener noreferrer">GitHub</a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="assets/images/profile2.jpeg" alt="Shina, full-stack and AI developer">
+                <div class="about-text"> 
+                    <!-- Intro -->
+                    <h3 class="intro">Shina Oguntoye</h3>
+                    <p class="intro-description">Medical Doctor | Full-Stack Developer | Aspiring AI Developer</p>
+
+                    <!-- Bio -->
+                    <p class="highlight">Hello! I'm Shina, a medical doctor transitioning into tech with a passion for full-stack development and artificial intelligence. I'm currently based in Nottinghamshire, UK.</p>
+                    <p class="highlight">After earning my MBBS degree in 2019 from St George's, University of London and subsequently working in medicine, I realized the immense potential of technology to more deeply impact lives.</p>
+                    <p class="highlight">Now, I'm combining my medical expertise with my growing programming skills to build impactful solutions that improve patient outcomes and revolutionize healthcare.</p>
+
+                    <!-- Skills List-->
+                <ul>
+                    <li><strong>Skills:</strong> Java, JavaScript, HTML, CSS, Git, React, Node.js, Python, Debugging, and problem-solving.</li>
+                    <li><strong>Career:</strong> Experienced medical doctor with a focus on patient care and clinical excellence.</li>
+                    <li><strong>Transition to Tech:</strong> Currently pursuing full-stack and AI development to bridge the gap between healthcare and technology. </li>
+                    <li><strong>Education:</strong> MBBS completed in 2019. Started Full-Stack Developer Career Path on Codecademy in December 2024. Starting MSc in Computer Science with Data Science in October 2025.</li>
+                </ul>
+
+                <!-- Closing -->
+                <p class="closing">When I’m not coding or treating patients, I enjoy traveling, working on creative projects, and experimenting with emerging technologies. Feel free to explore my projects and reach out if you'd like to collaborate!</p>
                 </div>
             </div>
-            <!-- Repeat for additional projects -->
-        </div>
-     </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <img src="assets/images/profile2.jpeg" alt="Shina, full-stack and AI developer">
-            <div class="about-text"> 
-                <!-- Intro -->
-                <h3 class="intro">Shina Oguntoye</h3>
-                <p class="intro-description">Medical Doctor | Full-Stack Developer | Aspiring AI Developer</p>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Contact Me</h2>
+            <form action="javascript:void(0);" method="POST" novalidate>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
 
-                <!-- Bio -->
-                <p class="highlight">Hello! I'm Shina, a medical doctor transitioning into tech with a passion for full-stack development and artificial intelligence. I'm currently based in Nottinghamshire, UK.</p>
-                <p class="highlight">After earning my MBBS degree in 2019 from St George's, University of London and subsequently working in medicine, I realized the immense potential of technology to more deeply impact lives.</p>
-                <p class="highlight">Now, I'm combining my medical expertise with my growing programming skills to build impactful solutions that improve patient outcomes and revolutionize healthcare.</p>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
 
-                <!-- Skills List-->
-            <ul>
-                <li><strong>Skills:</strong> Java, JavaScript, HTML, CSS, Git, React, Node.js, Python, Debugging, and problem-solving.</li>
-                <li><strong>Career:</strong> Experienced medical doctor with a focus on patient care and clinical excellence.</li>
-                <li><strong>Transition to Tech:</strong> Currently pursuing full-stack and AI development to bridge the gap between healthcare and technology. </li>
-                <li><strong>Education:</strong> MBBS completed in 2019. Started Full-Stack Developer Career Path on Codecademy in December 2024. Starting MSc in Computer Science with Data Science in October 2025.</li>
-            </ul>
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
 
-            <!-- Closing -->
-            <p class="closing">When I’m not coding or treating patients, I enjoy traveling, working on creative projects, and experimenting with emerging technologies. Feel free to explore my projects and reach out if you'd like to collaborate!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form action="javascript:void(0);" method="POST" novalidate>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="Your Name" required>
-
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Your Email" required>
-
-            <label for="message">Message:</label>
-            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-
-            <button type="submit" class="btn">Send Message</button>
-        </form>
-    </section>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -126,14 +138,5 @@
         </div>
     </footer>
     <script src="js/script.js"></script>
-
-    <div class = "floating-nav">
-        <ul>
-            <li><a href="home" aria-label="Home"></a></li>
-            <li><a href="projects" aria-label="Projects">Projects</a></li>
-            <li><a href="about" aria-label="About">About</a></li>
-            <li><a href="contact" aria-label="Contact">Contact</a></li>
-        </ul>        
-    </div>
 </body>
 </html>

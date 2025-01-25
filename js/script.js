@@ -24,7 +24,7 @@ function enableSmoothScrolling() {
             e.preventDefault();
             const targetElement = document.getElementById('projects');
             if (targetElement) {
-                target Element.scrollIntoView({
+                targetElement.scrollIntoView({
                     behavior: 'smooth',
                     block: 'center'
                 });
