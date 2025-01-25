@@ -1,10 +1,10 @@
 // Smooth Scrolling for Navigation Links
 
 function enableSmoothScrolling() {
-    const navLinks = document.querySelectorAll('.nav-links a, .floating-nav a'); // Include floating nav links
+    const allNavLinks = document.querySelectorAll('.nav-links a, .floating-nav a'); // Include floating nav links
     const viewWorkButton = document.querySelector('#view-work-button');
 
-    navLinks.forEach(link => {
+    allNavLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href').slice(1); // Remove the # from the href
@@ -23,6 +23,7 @@ function enableSmoothScrolling() {
         viewWorkButton.addEventListener('click', function (e) {
             e.preventDefault();
             const targetElement = document.getElementById('projects');
+            
             if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: 'smooth',
@@ -33,18 +34,21 @@ function enableSmoothScrolling() {
     }
 }
 
-// Highlight active navigation link based on view
+// Highlight active navigation link on both navbars
 
 function highlightActiveNav() {
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a, .floating-nav a');
+    const allNavLinks = document.querySelectorAll('.nav-links a, .floating-nav a');
     const threshold = window.innerHeight * 0.4;
     
     sections.forEach(section => {
         const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionHeight = rect.height;
+
         if (rect.top < threshold && rect.top > -rect.height + threshold) {
             const sectionId = section.getAttribute('id');
-            navLinks.forEach(link => {
+            allNavLinks.forEach(link => {
                 const isActive = link.getAttribute('href').slice(1) === sectionId;
                 link.classList.toggle('active', isActive);
             });

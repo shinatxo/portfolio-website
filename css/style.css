@@ -56,6 +56,16 @@ a:focus, button:focus {
     outline-offset: 2px;
 }
 
+.nav-links a,
+.floating-nav a {
+    outline: none; /* Remove default focus outline */
+}
+
+.nav-links a:focus,
+.floating-nav a:focus {
+    outline: none; /* Remove default focus outline */
+}
+
 /* Hero Section */
 .hero {
     text-align: center;
