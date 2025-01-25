@@ -24,7 +24,6 @@ body {
     align-items: center; /* Aligns nicely if you add an icon later */
 }
 
-
 /* Navbar */
 .navbar {
     display: flex;
@@ -44,11 +43,17 @@ body {
     color: #f5f5f5;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    padding: 0.5rem 0.75rem; /* Improved padding for better clickability */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .nav-links a:hover {
     color: #4caf50; /* Accent color */
+}
+
+a:focus, button:focus {
+    outline: 2px dashed #4caf50;
+    outline-offset: 2px;
 }
 
 /* Hero Section */
@@ -56,6 +61,11 @@ body {
     text-align: center;
     padding: 3rem 1rem;
     background: linear-gradient(180deg, #1e1e1e, #121212);
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero h1 {
@@ -78,12 +88,11 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .hero .btn:hover {
     background-color: #1db954;
-    transform: scale(1.05);
 }
 
 /* Projects Section */
@@ -107,13 +116,6 @@ body {
     justify-content: center;
     max-width: 800px;
     margin: 0 auto;
-}
-
-@media (max-width: 600px) {
-    .project-grid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-    }
 }
 
 .project-card {
@@ -176,7 +178,7 @@ body {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
-    color: #ffffff
+    color: #ffffff;
 }
 
 .about-content {
@@ -198,29 +200,26 @@ body {
     flex: 1;
 }
 
-/* Intro Styling */
 .about-text .intro {
     font-size: 1.5rem;
-    font-weight: 615;
+    font-weight: 600; /* Valid font weight */
     color: #4caf50;
     margin-bottom: 0.25rem;
 }
 
 .about-text .intro-description {
     font-size: 1.35rem;
-    font-weight: 575;
+    font-weight: 500; /* Valid font weight */
     color: #ffffff;
     margin-bottom: 0.5rem;
 }
 
-/* Highlight Styling */
 .about-text .highlight {
     color: #d3d3d3;
     line-height: 1.75;
     margin-bottom: 1rem;
 }
 
-/* Skills Styling */
 .about ul {
     list-style-type: none;
     padding: 0;
@@ -238,29 +237,13 @@ body {
     font-weight: 600;
 }
 
-/* Closing Styling */
 .about-text .closing {
     font-size: 1.15rem;
-    font-weight: 575;
+    font-weight: 500; /* Valid font weight */
     color: #d3d3d3;
     margin-top: 1.75rem;
     line-height: 1.7;
     font-style: italic;
-}
-
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about img {
-        width: 250px;
-    }
-
-    .about-text {
-        text-align: center;
-    }
 }
 
 /* Contact Section */
@@ -303,12 +286,11 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .contact button:hover {
     background-color: #1db954;
-    transform: scale(1.05);
 }
 
 /* Footer */
@@ -323,7 +305,7 @@ footer .social-links img {
     width: 30px;
     height: 30px;
     margin: 0 0.5rem;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: filter 0.3s ease;
 }
 
 footer .social-links img:not(.instagram-logo) {
@@ -331,9 +313,84 @@ footer .social-links img:not(.instagram-logo) {
 }
 
 footer .social-links img:hover {
-    transform: scale(1.2);
+    /* Removed transform to prevent layout shifts */
 }
 
 footer .social-links img.instagram-logo {
     filter: none;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about img {
+        width: 200px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero .btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .project-card {
+        padding: 1rem;
+        max-width: 90%;
+    }
+
+    .about img {
+        width: 150px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+
+    footer .social-links img {
+        width: 20px;
+        height: 20px;
+    }
 }
