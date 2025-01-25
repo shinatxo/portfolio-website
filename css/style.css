@@ -13,7 +13,17 @@ body {
     font-size: 16px;
 }
 
-/* Logo Styling */
+/* Buttons and Links: Hover/Focus Effects */
+button.hover,
+button:focus,
+a:hover,
+a:focus {
+    outline: none;
+    transform: scale(1.05);
+    background-color: #1db954;
+    transition: transform 0.2s ease, background-color: 0.2s ease;
+}
+
 .logo {
     font-family: 'Poppins', sans-serif; /* Clean, modern font */
     font-size: 1.4rem; /* Larger, attention-grabbing size */
@@ -47,8 +57,10 @@ body {
     transition: color 0.3s ease; /* Smooth color transition */
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus {
     color: #4caf50; /* Accent color */
+    transform: scale(1.05);
 }
 
 a:focus, button:focus {
@@ -98,11 +110,13 @@ a:focus, button:focus {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.hero .btn:hover {
+.hero .btn:hover, 
+.hero .btn:focus {
     background-color: #1db954;
+    transform: scale(1.05);
 }
 
 /* Projects Section */
@@ -160,6 +174,7 @@ a:focus, button:focus {
     font-size: 0.95rem;
 }
 
+/* Project Card Buttons */
 .project-card .btn {
     background-color: #4caf50;
     color: #121212;
@@ -169,11 +184,13 @@ a:focus, button:focus {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.project-card .btn:hover {
+.project-card .btn:hover,
+.project-card btn:focus {
     background-color: #1db954;
+    transform: scale(1.05);
 }
 
 /* About Section */
@@ -299,8 +316,10 @@ a:focus, button:focus {
     transition: background-color 0.3s ease;
 }
 
-.contact button:hover {
+.contact button:hover,
+.contact button:focus {
     background-color: #1db954;
+    transform: scale(1.05);
 }
 
 /* Footer */
@@ -322,8 +341,10 @@ footer .social-links img:not(.instagram-logo) {
     filter: brightness(0) invert(1);
 }
 
-footer .social-links img:hover {
-    /* Removed transform to prevent layout shifts */
+footer .social-links img:hover,
+footer .social-links img:focus {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 footer .social-links img.instagram-logo {

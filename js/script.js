@@ -37,8 +37,9 @@ function enableSmoothScrolling() {
 // Highlight active navigation link on both navbars
 
 function highlightActiveNav() {
-    const sections = document.querySelectorAll('section');
-    const allNavLinks = document.querySelectorAll('.nav-links a, .floating-nav a');
+    const sections = document.querySelectorAll('main section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const floatingLinks = document.querySelectorAll('floating-nav a');
     const threshold = window.innerHeight * 0.4;
     
     sections.forEach(section => {
@@ -48,7 +49,7 @@ function highlightActiveNav() {
 
         if (rect.top < threshold && rect.top > -rect.height + threshold) {
             const sectionId = section.getAttribute('id');
-            allNavLinks.forEach(link => {
+            [...navLinks, ...floatingLinks].forEach(link => {
                 const isActive = link.getAttribute('href').slice(1) === sectionId;
                 link.classList.toggle('active', isActive);
             });
