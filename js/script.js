@@ -16,6 +16,9 @@ function enableSmoothScrolling() {
                     block: 'center'
                 });
             }
+
+            // Reset styles after click
+            resetButtonStyles(this);
         });
     });
     
@@ -30,8 +33,19 @@ function enableSmoothScrolling() {
                     block: 'center'
                 });
             }
+
+            // Reset styles after click
+            resetButtonStyles(this);
         });
     }
+}
+
+// Reset button styles after click
+function resetButtonStyles(button) {
+    setTimeout(() => {
+        button.style.transform = 'none';
+        button.style.backgroundColor = '';
+    }, 200); // Adjust the delay as needed
 }
 
 // Highlight active navigation link on both navbars
